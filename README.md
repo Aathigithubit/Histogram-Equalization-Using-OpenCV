@@ -72,7 +72,47 @@ Display original color image, histogram, enhanced image, and enhanced histogram 
 
 ### Register No: 212223220001____________________________  
 ```
+import cv2
+import numpy as np
+import matplotlib.pyplot as plt
+img = cv2.imread('my.jpg', cv2.IMREAD_GRAYSCALE)
+plt.imshow(img, cmap='gray')
+plt.title('Original Image')
+plt.show()
 
+plt.hist(img.ravel(),256,range = [0, 255]);
+plt.title('Original Image')
+plt.show()
+
+img_eq = cv2.equalizeHist(img)
+plt.hist(img_eq.ravel(), 256, range = [0, 256])
+plt.title('Equalized Histogram')
+Text(0.5, 1.0, 'Equalized Histogram')
+
+plt.imshow(img_eq, cmap='gray')
+plt.title('Original Image')
+plt.show()
+
+Histogram Equalization for Color Images
+img = cv2.imread('my.jpg', cv2.IMREAD_COLOR)
+img_hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
+img_hsv[:,:,2] = cv2.equalizeHist(img_hsv[:, :, 2])
+img_eq = cv2.cvtColor(img_hsv, cv2.COLOR_HSV2BGR)
+ plt.imshow(img_eq[:,:,::-1]); plt.title('Equalized Image');plt.show()
+
+plt.hist(img_eq.ravel(),256,range = [0, 256]); plt.title('Histogram Equalized');plt.show()
+
+plt.figure(figsize = (30,10))
+plt.subplot(221); plt.imshow(img[:, :, ::-1]); plt.title('Original Color Image')
+plt.subplot(222); plt.imshow(img_eq[:, :, ::-1]); plt.title('Equalized Image')
+plt.show()
+
+plt.figure(figsize = [15,4])
+plt.subplot(121); plt.hist(img.ravel(),256,range = [0, 256]); plt.title('Original Image')
+plt.subplot(122); plt.hist(img_eq.ravel(),256,range = [0, 256]); plt.title('Histogram Equalized')
+Text(0.5, 1.0, 'Histogram Equalized')
+
+ 
 ```
 ---
 
@@ -83,7 +123,12 @@ Display original color image, histogram, enhanced image, and enhanced histogram 
 - Original grayscale image is displayed  
 - Histogram of original grayscale image is plotted  
 - Enhanced image after histogram equalization is displayed  
-- Histogram of enhanced grayscale image shows improved contrast  
+- Histogram of enhanced grayscale image shows improved contrast
+- <img width="782" height="460" alt="image" src="https://github.com/user-attachments/assets/039600fe-07ac-483a-b0a2-f40aa8854f88" />
+  <img width="832" height="547" alt="image" src="https://github.com/user-attachments/assets/a481f2a9-4c1d-4265-ad3b-7f534d374440" />
+  <img width="887" height="547" alt="image" src="https://github.com/user-attachments/assets/77fecaad-42a9-459a-9a2f-27bd7a58fb6a" />
+  <img width="731" height="457" alt="image" src="https://github.com/user-attachments/assets/9dce6c60-e4a4-4bef-ae10-a2912bb4b370" />
+
 
 ### Color Image Histogram Equalization
 
