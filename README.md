@@ -136,6 +136,11 @@ Text(0.5, 1.0, 'Histogram Equalized')
 - Histogram of B, G, R channels is plotted  
 - Enhanced image after HSV-based equalization is displayed  
 - Histogram of enhanced image shows better intensity distribution  
+<img width="877" height="446" alt="image" src="https://github.com/user-attachments/assets/09512823-7bd1-41e8-bfe0-4c6eae351f86" />
+<img width="927" height="577" alt="image" src="https://github.com/user-attachments/assets/4ed31c50-7a68-4e56-a396-6764408ad12f" />
+<img width="1332" height="298" alt="image" src="https://github.com/user-attachments/assets/5e579467-d271-47c4-87c7-4b6212f4b135" />
+<img width="1357" height="405" alt="image" src="https://github.com/user-attachments/assets/fa081885-6422-4002-a594-248d24146c63" />
+
 
 ---
 
